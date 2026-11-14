@@ -99,7 +99,7 @@ export default function Preloader({ onDone }) {
         <p className="pl-edge absolute left-14 top-6 text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-400">
           {content.name}
         </p>
-        <p className="pl-edge absolute right-14 top-6 text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-400">
+        <p className="pl-edge absolute right-14 top-6 hidden text-[10px] sm:block font-semibold uppercase tracking-[0.3em] text-slate-400">
           Portofolio © {new Date().getFullYear()}
         </p>
         <p className="pl-edge absolute bottom-6 left-14 text-[10px] font-semibold uppercase tracking-[0.3em] text-slate-400">

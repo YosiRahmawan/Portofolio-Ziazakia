@@ -69,7 +69,14 @@ body {
 /* Tulisan menu lebih kecil agar "Unduh CV" muat satu baris */
 .mobile-menu .sm-panel-item {
   font-size: clamp(2rem, 11vw, 2.9rem);
-  padding-right: 1.8rem; /* ruang untuk nomor urut */
+  display: block;
+  width: 100%;
+  padding-right: 2.6rem; /* ruang untuk nomor urut */
+}
+/* Nomor urut di tepi kanan, tidak menimpa huruf */
+.mobile-menu .sm-panel-list[data-numbering] .sm-panel-item::after {
+  right: 0;
+  top: 0.45em;
 }
 
 /* Kursor efek menulis */
