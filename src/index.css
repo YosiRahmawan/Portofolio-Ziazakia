@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', sans-serif;
+  --font-serif: 'Instrument Serif', serif;
+  /* Warna diambil dari almamater: biru, hitam, putih */
+  --color-accent: #1f5fd1;
+  --color-accent-dark: #1748a8;
+  --color-ink: #0b0f19;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: #fff;
+  color: var(--color-ink);
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: #fff;
+}
+
+.serif {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--color-accent);
+}
+
+/* Kartu kaca putih */
+.card {
+  background: rgba(255, 255, 255, 0.92);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(15, 23, 42, 0.06);
+  box-shadow: 0 20px 40px -15px rgba(15, 23, 42, 0.1), 0 0 1px 1px rgba(15, 23, 42, 0.04);
+  transition: transform 0.3s, box-shadow 0.3s, border-color 0.3s;
+}
+.card-hover:hover {
+  transform: translateY(-6px);
+  border-color: rgba(31, 95, 209, 0.35);
+  box-shadow: 0 28px 50px -18px rgba(31, 95, 209, 0.25), 0 0 1px 1px rgba(15, 23, 42, 0.04);
+}
+
+/* Garis grid latar */
+.perspective-grid {
+  background-image:
+    linear-gradient(to right, rgba(148, 163, 184, 0.22) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148, 163, 184, 0.22) 1px, transparent 1px);
+  background-size: 48px 48px;
+  -webkit-mask-image: linear-gradient(to bottom, #000 30%, transparent 95%);
+  mask-image: linear-gradient(to bottom, #000 30%, transparent 95%);
+}
+
+/* Kursor efek menulis */
+.type-cursor {
+  display: inline-block;
+  width: 0.06em;
+  height: 0.85em;
+  margin-left: 0.04em;
+  vertical-align: -0.08em;
+  background: var(--color-accent);
+  animation: blink 0.9s steps(1) infinite;
+}
+@keyframes blink {
+  50% { opacity: 0; }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+@keyframes floatFast {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+.float-slow { animation: floatSlow 6s ease-in-out infinite; }
+.float-fast { animation: floatFast 4s ease-in-out infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
