@@ -143,7 +143,7 @@ export default function Hero({ ready = true }) {
         </div>
 
         {/* Foto + kartu melayang */}
-        <div className="relative mx-auto flex h-[400px] w-full max-w-3xl items-end justify-center sm:h-[500px]">
+        <div className="relative mx-auto flex h-[170px] w-full max-w-3xl items-end justify-center sm:h-[500px]">
           {/* Kartu 1 */}
           <div className="p-card-a absolute left-0 top-10 z-30 hidden sm:left-4 sm:block">
             <div className="m-card-a h-card">
@@ -163,7 +163,7 @@ export default function Hero({ ready = true }) {
           </div>
 
           {/* Kartu 2 */}
-          <div className="p-card-b absolute right-0 top-20 z-30 sm:right-2">
+          <div className="p-card-b absolute left-0 right-0 top-2 z-30 mx-auto w-fit sm:left-auto sm:right-2 sm:top-20 sm:mx-0">
             <div className="m-card-b h-card">
               <div className="card float-fast w-60 rounded-2xl p-4 text-left sm:w-72">
                 <div className="mb-2 flex items-center gap-2.5">
@@ -201,7 +201,8 @@ export default function Hero({ ready = true }) {
           </div>
 
           {/* Foto tanpa background */}
-          <div className="p-photo relative z-20">
+          {/* Foto disembunyikan di HP supaya tidak menutupi teks */}
+          <div className="p-photo relative z-20 hidden sm:block">
             <div className="h-photo m-photo">
               <img
                 src={content.photo}

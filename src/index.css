@@ -58,6 +58,20 @@ body {
   mask-image: linear-gradient(to bottom, #000 30%, transparent 95%);
 }
 
+/* StaggeredMenu: header lebih ramping agar tidak menutupi konten */
+.mobile-menu .staggered-menu-header {
+  padding: 0.9rem 1.25rem;
+}
+/* Logo gelap tetap gelap saat menu terbuka (bawaan komponen membalik warna logo putih) */
+.mobile-menu .staggered-menu-wrapper[data-open] .sm-logo-img {
+  filter: none;
+}
+/* Tulisan menu lebih kecil agar "Unduh CV" muat satu baris */
+.mobile-menu .sm-panel-item {
+  font-size: clamp(2rem, 11vw, 2.9rem);
+  padding-right: 1.8rem; /* ruang untuk nomor urut */
+}
+
 /* Kursor efek menulis */
 .type-cursor {
   display: inline-block;
