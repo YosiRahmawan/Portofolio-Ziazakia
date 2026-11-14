@@ -49,22 +49,25 @@ export const content = {
       school: 'SMAN 1 Cikatomas',
       detail: 'Jurusan IPA',
       year: 'Lulus 2023',
-      logo: '/img/logo-sman1.png',
+      logo: '/img/logo-sman1.webp',
     },
   ],
 
   projects: [
     {
+      icon: 'library',
       title: 'Sistem Perpustakaan',
       desc: 'Membuat sistem perpustakaan untuk mengelola data buku, anggota, dan peminjaman.',
       tools: ['MySQL', 'SQL'],
     },
     {
+      icon: 'database',
       title: 'Perancangan Database SQL',
       desc: 'Merancang database menggunakan SQL, lengkap dengan struktur tabel dan relasinya.',
       tools: ['SQL', 'MySQL'],
     },
     {
+      icon: 'network',
       title: 'ERD, LRS & Relasi Tabel',
       desc: 'Membuat ERD, LRS, dan relasi antar tabel sebagai dasar rancangan basis data.',
       tools: ['ERD', 'LRS'],

@@ -54,7 +54,14 @@ export default function Preloader({ onDone }) {
         .to(root.current, { yPercent: -100, duration: reduce ? 0.2 : 0.9, ease: 'power4.inOut' }, '-=0.72')
     }, root)
 
+    // Pengaman: kalau animasi tersendat (mis. tab di latar belakang), tetap buka halaman
+    const failsafe = setTimeout(() => {
+      document.body.style.overflow = ''
+      onDone()
+    }, 9000)
+
     return () => {
+      clearTimeout(failsafe)
       ctx.revert()
       document.body.style.overflow = ''
     }

@@ -1,5 +1,5 @@
 ﻿import { useState } from 'react'
-import { ArrowRight, ArrowUpRight, GraduationCap, FolderOpen, Download, BarChart3, FileSpreadsheet, Database, Users } from 'lucide-react'
+import { ArrowRight, ArrowUpRight, GraduationCap, FolderOpen, Download, BarChart3, FileSpreadsheet, Database, Users, Library, Network } from 'lucide-react'
 import Reveal from './Reveal'
 import { content } from '../data/content'
 import SplitText from './reactbits/SplitText'
@@ -28,6 +28,8 @@ const Orb = ({ className }) => (
 )
 
 const skillIcons = { chart: BarChart3, office: FileSpreadsheet, database: Database, team: Users }
+// Ikon proyek: tiap proyek beda
+const projectIcons = { library: Library, database: Database, network: Network }
 
 // Logo institusi; kalau file logo belum ada, tampil ikon topi wisuda
 function Logo({ src, alt }) {
@@ -164,7 +166,10 @@ export function Projects() {
           {content.projects.map((p) => (
             <article key={p.title} className="reveal card card-hover flex flex-col rounded-3xl p-7">
               <div className={`${iconBox} mb-5`}>
-                <FolderOpen size={22} />
+                {(() => {
+                  const Icon = projectIcons[p.icon] || FolderOpen
+                  return <Icon size={22} />
+                })()}
               </div>
               <h3 className="text-xl font-bold leading-snug">{p.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-500">{p.desc}</p>
